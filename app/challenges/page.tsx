@@ -96,8 +96,8 @@ export default function ChallengesPage() {
     },
   ];
 
-  const handleSelect = () => {
-    setPressing("any");
+  const handleSelect = (challengeId: string) => {
+    setPressing(challengeId);
     // small press animation + route
     setTimeout(() => router.push("/Dashboard"), 1050);
   };
