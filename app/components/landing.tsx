@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 
 export default function MarsChallengeLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const heroRef = useRef<HTMLSectionElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
   const planetWrapRef = useRef<HTMLDivElement | null>(null);
@@ -162,7 +162,7 @@ export default function MarsChallengeLanding() {
       stars.push(
         <div
           key={i}
-          ref={(el) => (starsRef.current[i] = el)}
+          ref={(el) => { starsRef.current[i] = el; }}
           className="absolute rounded-full bg-white"
           style={{
             width: size,
